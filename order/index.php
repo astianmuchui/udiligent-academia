@@ -1,10 +1,20 @@
+<?php
+    define("APP_ROOT","../src/objects/classes.php");
+    $output = "";
+    if(isset($_POST['make_order'])){
+        require_once APP_ROOT;
+
+        $ord_mk = new order;
+        $ord_mk->make_order();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../assets/css/support.css">
+   <link rel="stylesheet" href="../assets/css/order.css">
    <link rel="stylesheet" href="../assets/css/main.css">
    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
@@ -36,12 +46,12 @@
                           <a class="nav-link" href="../#about">About</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link " href="../order/">Order
+                          <a class="nav-link active" href="./">Order
 
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link active" href="#">Support</a>
+                          <a class="nav-link" href="../support/">Support</a>
                       </li>
                   </ul>
 
@@ -51,28 +61,54 @@
 
 
   </header>
-
-
+    <br>
+    <center class="text-danger" style="text-align:center;"><?php echo $output; ?></center>
   <div class="main">
       <div class="form-wrap">
-         <form action="" method="post">
+         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
          
                <div class="form-group">
                   <label for="" class="form-label mt-4">Name</label>
-                  <input type="text" class="form-control" name="cmp-nm">
+                  <input type="text" class="form-control" required name="ord_nm">
               </div>
               <div class="form-group">
                   <label for="" class="form-label mt-4">Email</label>
-                  <input type="cmp-email" class="form-control">
+                  <input type="email" class="form-control" required name="ord_em">
               </div>
-
               <div class="form-group">
-                 <label for="" class="form-label mt-4">Complaint</label>
-                 <textarea name="cmp" id="" cols="30" rows="5" class="form-control"></textarea>
+                 <label for="" class="form-label mt-4">Topic</label>
+                 <select name="topic" id="" class="form-control" required name="topic">
+                    <option value="">-SELECT-</option>
+                     <option value="essay">Essay</option>
+                     <option value="matlab">Matlab</option>
+                     <option value="math">Mathematics</option>
+                     <option value="dissertation">Dissertation</option>
+                     <option value="respaper">Research paper</option>
+                     <option value="chem">Chemistry</option> 
+                     <option value="economics">Economics</option>
+                     <option value="law">Law</option>
+                     <option value="politics">Political Science</option>
+                     <option value="philosophy">Philosophy</option>
+                     <option value="excel">Excel</option>   
+                     <option value="powerpoint">Powerpoint</option>
+                 </select>
+              </div>
+              <div class="form-group">
+                 <label for="" class="form-label mt-4">Deadline</label>
+                 <input type="date" name="date" id="" class="form-control" required>
+
+              </div>
+              <div class="form-group">
+               <label for="" class="form-label mt-4">Document</label>
+               <input type="file" name="doc" id="" class="form-control" required>
+              </div>
+              <div class="form-group">
+                 <label for="" class="form-label mt-4">Specifications</label>
+                 <textarea name="specs" id="" cols="30" rows="3" class="form-control" required></textarea>
               </div>
               <div class="">
                  <label for="" class="form-label mt-4"></label>
-                 <input type="subm" value="Send " class="form-control btn btn-primary">
+                 <input type="submit" value="Send " name="make_order" class="form-control btn btn-primary">
               </div>
          </form>
       </div>
@@ -89,8 +125,8 @@
                    <li><a href="../#features">Features</a></li>
                    <li><a href="../#contact">Contact Us</a></li>
                    <li><a href="../#about">About</a></li>
-                   <li><a href="../order/">Order</a></li>
-                   <li><a href="#">Support</a></li>
+                   <li><a href="#">Order</a></li>
+                   <li><a href="../support/">Support</a></li>
                </ul>
            </nav>
        </div>

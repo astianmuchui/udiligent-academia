@@ -1,3 +1,12 @@
+<?php
+    define("APP_ROOT","./src/objects/classes.php");
+    if(isset($_POST['submit'])){
+       
+        require_once APP_ROOT;
+        $msg = new sendmsg;
+        $msg->deliver_message();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,22 +169,21 @@
     <div class="contact" >
         <h3 class="text-primary"id="contact">Contact Us</h3>
         <div class="form-container">
-            <form action="" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="form-group">
                     <label for="" class="form-label mt-4">Name</label>
-                    <input type="text" class="form-control" name="cnm">
+                    <input type="text" class="form-control" name="cnm" required>
                 </div>
                 <div class="form-group">
                     <label for="" class="form-label mt-4">Email</label>
-                    <input type="email" class="form-control" name="cml">
+                    <input type="email" class="form-control" name="cml" required>
                 </div>
                 <div class="form-group">
                     <label for="" class="form-label mt-4">Message</label>
-                    <textarea class="form-control" id="exampleTextarea" rows="5" name="cmsg"></textarea>
+                    <textarea class="form-control" id="exampleTextarea" rows="5" required name="cmsg"></textarea>
                 </div> <br>
                 <div class="form-group">
-
-                    <input type="submit" value="Send Message" name="submit"  class="btn btn-primary">
+                        <input type="submit" value="Send Message" class="form-control bg-primary text-white" name="submit">
                 </div>
             </form>
         </div>

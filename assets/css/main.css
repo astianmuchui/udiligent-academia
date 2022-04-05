@@ -326,7 +326,7 @@ footer{
 
 /* Responsiveness */
 
-@media (min-width:300px) and  (max-width:360px) {
+@media (min-width:290px) and (max-width:360px) {
     body{
         margin: 0;
         padding: 0;
