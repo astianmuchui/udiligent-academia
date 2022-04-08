@@ -1,4 +1,4 @@
-<?php
+ <?php
     define("APP_ROOT","../src/objects/classes.php");
     $output = "";
     if(isset($_POST['make_order'])){
@@ -7,7 +7,7 @@
         $ord_mk = new order;
         $ord_mk->make_order();
     }
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,8 +63,8 @@
   </header>
     <br>
     <center class="text-danger" style="text-align:center;"><?php echo $output; ?></center>
-  <div class="main">
-      <div class="form-wrap">
+  <div class="main cont">
+      <div class="form-wrap cont">
          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
          
                <div class="form-group">
@@ -113,8 +113,8 @@
          </form>
       </div>
   </div>
-  <footer>
-   <div class="footer">
+  <footer class="cont">
+   <div class="footer cont">
        <div class="intr"><span>DILIGENT WRITING</span>
        <p>Top-notch Academic writing quality</p>
        </div>
@@ -137,7 +137,7 @@
        </div>
 
    </div>
-       <div class="dev">
+       <div class="dev cont">
            <p>Diligent writing &copy; 2022 All rights reserved</p>
            <p>Powered by  <a href="mailto:sebastianmuchui79@gmail.com">Astian</a></p>
        </div>

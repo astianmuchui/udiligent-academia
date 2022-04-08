@@ -21,9 +21,8 @@ header {
     overflow-x: hidden;
     margin: 0;
 }
-
 main {
-    height: 92vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -326,19 +325,20 @@ footer{
 
 /* Responsiveness */
 
-@media (min-width:290px) and (max-width:360px) {
+@media screen and (max-width:450px) {
     body{
         margin: 0;
         padding: 0;
         overflow-x: hidden;
         box-sizing: border-box;
-        
+        width: 100vw;
     }
+
     header {
         position: fixed;
         top: 0;
         z-index: 99;
-        width: 99.9vw;
+        width: 100vw;
         overflow-x: hidden;
         margin: 0;
         padding: 0;
@@ -346,6 +346,11 @@ footer{
     
     main{
         width: 100%;
+        overflow-x: hidden;
+
+    }
+    main.intro{
+        overflow: auto;
     }
     main .intro p {
         color: white;
@@ -360,6 +365,7 @@ footer{
         animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
+        overflow: auto;
     }
     main .intro a {
         position: relative;
@@ -396,6 +402,7 @@ footer{
     .features {
         height: max-content;
         padding: 10px 0 10px 0;
+        overflow-x: hidden;
     }
     .features .grid-container {
         display: grid;
@@ -416,6 +423,7 @@ footer{
     }
     .about-us{
         height: max-content;
+        overflow-x: hidden;
     }
     .about-us p{
         width: 90vw;
@@ -428,13 +436,27 @@ footer{
     }
     .contact{
         height: max-content;
+        overflow-x: hidden;
     }
     .contact .form-container{
         width: 90%;
     }
+    .dev{
+        width: 100%;
+        height: max-content;
+        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        overflow-x: hidden;
+    }
     .footer{
         height: max-content;
         display: block;
+        overflow-x: hidden;
     }
     .footer div{
         width: 100%;

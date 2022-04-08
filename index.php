@@ -1,4 +1,4 @@
-<?php
+ <?php
     define("APP_ROOT","./src/objects/classes.php");
     if(isset($_POST['submit'])){
        
@@ -6,7 +6,7 @@
         $msg = new sendmsg;
         $msg->deliver_message();
     }
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    
     <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
     <title>Home | Diligent Writing</title>
 </head>
