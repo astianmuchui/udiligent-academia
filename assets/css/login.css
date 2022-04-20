@@ -1,0 +1,96 @@
+.form-mn-wrapper{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
+
+}
+.cont-mn{
+   width: 80%;
+   height: 80vh;
+   background-color: rgba(5, 5, 5, 0.849);
+   box-shadow:  3px 3px 3px rgb(8, 8, 8) ;
+   z-index: 3;
+   box-sizing: border-box;
+   padding: 10px 20px;
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   animation: slideup 2s cubic-bezier(0.86, 0, 0.07, 1) forwards 1;
+   animation-delay: 0.5s;
+}
+
+.opn{
+   width: 100%;  
+
+}
+
+.opn span{
+   color: rgb(238, 255, 7);
+   font-size: 20px;
+   position: relative;
+   top: -20px;
+   left: 20px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   text-transform: capitalize;
+}
+.opn span span{
+   position: relative;
+   top: 2px;
+   left: -3px;
+   font-size: 50px;
+   color: rgb(255, 255, 255);
+}
+.forms{
+   width: 90%;
+   height: 50%;
+}
+form{
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   height: 300px;
+   width: 600px;
+}
+form input{
+   margin-bottom: 30px;
+   background-color: rgba(0, 0, 0, 0.685);
+   border: 1px solid rgb(231, 207, 71);
+   padding: 20px;
+   border-radius: 10px;
+   caret-color: gold;
+   color: rgb(221, 190, 13);   
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+::placeholder{
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   color: gold;
+}
+button{
+   box-shadow: none;
+   background-color: gold;
+   border:none;
+   padding: 10px;
+   border-radius: 10px;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+@keyframes slideup{
+   0%{
+      opacity: 0;
+      top: 40px;
+   }
+
+   100%{
+      opacity: 1;
+      top: 0;
+   }
+}

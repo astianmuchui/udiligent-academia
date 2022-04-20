@@ -1,5 +1,6 @@
 <?php
+// File for testing functions
    require('./classes.php');
-   $test = new unit_test;
-   $test->unit_test_db();
+   $test = new db_acess;
+   $test->get_complaints_count();
 ?>

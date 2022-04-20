@@ -6,7 +6,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Roboto|Tangerine">
    <link rel="stylesheet" href="../assets/css/cpanel.css">
-   <script src="https://kit.fontawesome.com/84b6428a50.js" crossorigin="anonymous"></script>
+
+   <script src="../assets/javascript/font_awesome_main.js" crossorigin="anonymous"></script>
    <title>Admin</title>
 </head>
 <body>
@@ -17,15 +18,15 @@
 
    </header>
    <main>
-      <img src="../assets/images/admin-icon-12-removebg-preview.png" height="100"  width="100" alt="admin avatar" loading="lazy">
+      <a href="./index.html"><img src="../assets/images/admin-icon-12-removebg-preview.png" height="100"  width="100" alt="admin avatar" loading="lazy" title="Home"></a>
       <nav>
          <ul>
-            <li>  <a href=""><i class="fas fa-inbox child" title="messages"></i></a> </li>
-            <li><a href=""> <i class="fas fa-cart-plus inter" title="orders"></i> </a></li>
+            <li>  <a href="./messages.html" ><i class="fas fa-inbox child" title="messages"></i></a> </li>
+            <li><a href="./orders.html"> <i class="fas fa-cart-plus inter" title="orders"></i> </a></li>
             <li><a href=""> <i class="fas fa-user-clock last" title="support"></i></a></li>
             <li><a href=""> <i class="fas fa-sign-out-alt finl" title="logout"></i></a></li>
             <li><a href=""> <i class="fas fa-arrow-circle-left  finl" title="back to website"></i></a></li>
-            <li><a href=""> <i class="fas fa-redo finl" title="reload"></i></a></li>
+            <li><a href="#"> <i class="fas fa-redo finl" id="reload" title="reload"></i></a></li>
             <li><a href=""> <i class="fab fa-twitter finl" title="Twitter"></i></a></li>
             <li>  <a href=""><i class="far fa-envelope child" title="mailbox"></i></a> </li>
          </ul>
@@ -85,5 +86,6 @@
          </div>
       </div>
    </section>
+   <script src="../assets/javascript/reloader.js"></script>
 </body>
 </html>

@@ -105,14 +105,18 @@
          public function send_complaint(){
             $this->conn = mysqli_connect($this->dbhost,$this->dbuser,$this->dbpwd,$this->dbname);
             $this->ctm_nm = mysqli_real_escape_string($this->conn,$_POST['cmp-nm']);
-            $this->ctm_em = mysqli_real_escape_string($this->conn, $_POST['ctm_email']);
+            $this->ctm_em =  mysqli_real_escape_string($this->conn,$_POST['cmp-email']);
             $this->cmplnt = mysqli_real_escape_string($this->conn, $_POST['cmp']);
             //Encrypt Data
             $enc_cmp_nm = base64_encode($this->ctm_nm);
             $enc_cmp_em = base64_encode($this->ctm_em);
             $enc_ctm_cmp = base64_encode($this->cmplnt);
             //Enter to database
-            $exec = mysqli_query($this->conn,"INSERT INTO support (`cmpnm`,`cmpem`,`cmpmsg`) VALUES ('$enc_cmp_nm','$enc_cmp_em','$enc_ctm_cmp')");
+            $exec = mysqli_query(
+               $this->conn,
+            "INSERT INTO support (`cmpnm`,`cmpem`,`cmpmsg`) 
+            VALUES ('$enc_cmp_nm','$enc_cmp_em','$enc_ctm_cmp')"
+            );
             if($exec){
                if(mail("diligentwriting20@gmail.com","classified.diligentwriting@gmail.com","New Complaint",                    
                 "A new order has been placed by '.$this->ctm_nm.' , '.$this->ctm_em.' Please login to view the complaint ")){
@@ -124,11 +128,69 @@
          }
    }
 
+   // Admin Functions 
+   class db_acess extends DB {
+      private $server_connection;
+      private $result;
 
+      private function establish_server_connection(){
+         return $this->server_connection = mysqli_connect($this->dbhost,$this->dbuser,$this->dbpwd,$this->dbname);
+        
+      }
+
+      private function exec_query($query){
+         return $this->result = mysqli_query(self::establish_server_connection(),$query);
+      }
+
+      private function close_server_connection(){
+         return mysqli_close(db_acess::establish_server_connection());
+      }
+
+      public function get_orders_count(){
+
+         $this->result = db_acess::exec_query("SELECT * FROM orders");
+         $rows = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+         mysqli_free_result($this->result);
+         self::close_server_connection();
+         print(count($rows));
+      
+      }
+
+      public function get_messages_count(){
+         $this->result = db_acess::exec_query("SELECT * FROM messages");
+         $rows = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+         mysqli_free_result($this->result);
+         self::close_server_connection();
+         print(count($rows));
+      }
+
+      public function get_complaints_count(){
+         $this->result = db_acess::exec_query("SELECT * FROM support");
+         $rows = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+         mysqli_free_result($this->result);
+         self::close_server_connection();
+         print(count($rows));
+      }
+
+      public function latest_orders(){
+         $this->result = db_acess::exec_query("SELECT * FROM orders ORDER BY id DESC LIMIT 6");
+         $latest_orders = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+         mysqli_free_result($this->result);
+         self::close_server_connection();
+         foreach ($latest_orders as $latest_order):
+            $dcrypt_name = base64_decode($latest_order['unm']);
+            $dcrypt_topic = base64_decode($latest_order['topic']);
+            $div = '
+                  <div>
+                     <p>'.$dcrypt_name.'</p>
+                     <small>Topic : '.$dcrypt_topic.'</small>
+                     <a href="#" class="btn-view">Details</a>
+               </div>
+            ';
+            echo $div;
+         endforeach;
+      }
+      
+
+   }
 ?>
-
-
-
-
-
-

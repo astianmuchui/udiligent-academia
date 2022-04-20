@@ -72,7 +72,7 @@
 
               <div class="form-group">
                   <label for="" class="form-label mt-4">Email</label>
-                  <input type="cmp-email" class="form-control" required>
+                  <input type="email" name="cmp-email" class="form-control" required>
               </div>
 
               <div class="form-group">
