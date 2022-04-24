@@ -79,18 +79,18 @@
                  <label for="" class="form-label mt-4">Topic</label>
                  <select name="topic" id="" class="form-control" required name="topic">
                     <option value="">-SELECT-</option>
-                     <option value="essay">Essay</option>
-                     <option value="matlab">Matlab</option>
-                     <option value="math">Mathematics</option>
-                     <option value="dissertation">Dissertation</option>
-                     <option value="respaper">Research paper</option>
-                     <option value="chem">Chemistry</option> 
-                     <option value="economics">Economics</option>
-                     <option value="law">Law</option>
-                     <option value="politics">Political Science</option>
-                     <option value="philosophy">Philosophy</option>
-                     <option value="excel">Excel</option>   
-                     <option value="powerpoint">Powerpoint</option>
+                     <option value="Essay">Essay</option>
+                     <option value="Matlab">Matlab</option>
+                     <option value="Math">Mathematics</option>
+                     <option value="Dissertation">Dissertation</option>
+                     <option value="Research Paper">Research paper</option>
+                     <option value="Chemistry">Chemistry</option> 
+                     <option value="Economics">Economics</option>
+                     <option value="Law">Law</option>
+                     <option value="Politics">Political Science</option>
+                     <option value="Philosophy">Philosophy</option>
+                     <option value="Excel">Excel</option>   
+                     <option value="Powerpoint">Powerpoint</option>
                  </select>
               </div>
               <div class="form-group">
@@ -133,6 +133,11 @@
        <div class="conts">
            <a href="https://twitter.com/onestheessay" target="_blank"><i class="fab fa-twitter "></i></a>
            <a href="mailto:diligentwriting20@gmail.com" target="_blank"><i class="far fa-envelope "></i></a>
+
+
+
+
+           
            <a href="https://www.reddit.com/user/diligentacademia/"><i class="far fa-reddit"></i></a>
        </div>
 

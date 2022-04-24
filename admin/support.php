@@ -18,18 +18,18 @@
 
 </header>
    <main>
-      <a href="./index.html"><img src="../assets/images/admin-icon-12-removebg-preview.png" height="100"  width="100" alt="admin avatar" loading="lazy" title="Home"></a>
+      <a href="./"><img src="../assets/images/admin-icon-12-removebg-preview.png" height="100"  width="100" alt="admin avatar" loading="lazy" title="Home"></a>
       
       <nav>
          <ul>
-            <li>  <a href="./messages.html"><i class="fas fa-inbox child" title="messages"></i></a> </li>
-            <li><a href="./orders.html"> <i class="fas fa-cart-plus inter" title="orders"></i> </a></li>
-            <li><a href="#"> <i class="fas fa-user-clock last active" title="support"></i></a></li>
+         <li>  <a href="./messages.php" ><i class="fas fa-inbox child" title="messages"></i></a> </li>
+            <li><a href="./orders.php"> <i class="fas fa-cart-plus inter" title="orders"></i> </a></li>
+            <li><a href="./support.php"> <i class="fas fa-user-clock last" title="support"></i></a></li>
             <li><a href=""> <i class="fas fa-sign-out-alt finl" title="logout"></i></a></li>
-            <li><a href=""> <i class="fas fa-arrow-circle-left  finl" title="back to website"></i></a></li>
-            <li><a href="" id="reload"> <i class="fas fa-redo finl" title="reload"></i></a></li>
-            <li><a href=""> <i class="fab fa-twitter finl" title="Twitter"></i></a></li>
-            <li>  <a href=""><i class="far fa-envelope child" title="mailbox"></i></a> </li>
+            <li><a href="../"> <i class="fas fa-arrow-circle-left  finl" title="back to website"></i></a></li>
+            <li><a href="#"> <i class="fas fa-redo finl" id="reload" title="reload"></i></a></li>
+            <li><a href="https://twitter.com/onestheessay/"> <i class="fab fa-twitter finl" title="Twitter"></i></a></li>
+            <li>  <a href="https://mail.google.com/mail/u/0/"><i class="far fa-envelope child" title="mailbox"></i></a> </li>
          </ul>
       </nav>
    

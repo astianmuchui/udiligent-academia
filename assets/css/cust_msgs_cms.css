@@ -66,7 +66,7 @@
    width: 96%;
    height: 30vh;
    background: rgba(5, 5, 5, 0.815);
-   padding-top: 300px;
+   padding-top: 250px;
    overflow-y: auto;
    display: grid;
    grid-template-columns: repeat(1,1fr);
@@ -97,22 +97,22 @@ a{
 }
 .msg_box{
    width: 95%;
-   height: 60px;
-   background:  rgba(100, 88, 6, 0.699);
-   padding: 5px;
+   height: 35px;
+   background:  rgba(24, 23, 20, 0.904);
+   padding: 10px;
    border-radius: 10px;
    
 }
 .msg_box p{
-   color: rgba(0, 0, 0, 0.863);
+   color: rgba(251, 255, 0, 0.863);
    position: relative;
-   top: -10px;
+   top: -16px;
 }
 .msg_box small{
    position: relative;
-   top: -25px;
+   top: -30px;
    color: white;
-   font-size: 12px;
+   font-size: 11px;
    font-weight: 100;
 }
 .msg_box .time{

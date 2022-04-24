@@ -163,7 +163,6 @@
          self::close_server_connection();
          print(count($rows));
       }
-
       public function get_complaints_count(){
          $this->result = db_acess::exec_query("SELECT * FROM support");
          $rows = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
@@ -180,17 +179,49 @@
          foreach ($latest_orders as $latest_order):
             $dcrypt_name = base64_decode($latest_order['unm']);
             $dcrypt_topic = base64_decode($latest_order['topic']);
+            $enc_id = base64_encode($latest_order['id']);
             $div = '
                   <div>
                      <p>'.$dcrypt_name.'</p>
                      <small>Topic : '.$dcrypt_topic.'</small>
-                     <a href="#" class="btn-view">Details</a>
+                     <a href="./view_order.php?id='.$enc_id.'" class="btn-view">Details</a>
                </div>
             ';
             echo $div;
          endforeach;
       }
-      
+      public function view_indiv_ord(){
+         $dcry_id = base64_decode($_GET['id']);
+         $this->result = db_acess::exec_query("SELECT * FROM orders WHERE id= $dcry_id");
+
+         $this->individual_order = mysqli_fetch_assoc($this->result);
+         // Decrypting data..................
+
+         $dcrypt_name = base64_decode($this->individual_order['unm']);
+         $dcrypt_email = base64_decode($this->individual_order['email']);
+         $dcrypt_tpc = base64_decode($this->individual_order['topic']);
+         $dcrypt_time = base64_decode($this->individual_order['date']);
+         $decrypt_url = base64_decode($this->individual_order['url']);
+         $dcrypt_specs = base64_decode($this->individual_order['specs']);
+         $div = ' 
+                  <div class="stuff ">
+                     <h1>'.$dcrypt_name.'.</h1>
+                     <small> <span class="highlight">Posted </span> '.substr($this->individual_order['time'],0,16).' </small> <br>
+                     <small><span class="highlight">Topic </span> '.$dcrypt_tpc.'</small> <br>
+                     <small><span class="highlight">Deadline </span>'.$dcrypt_time.'</small> <br>
+                     <small><a href="../src/media/'.$decrypt_url.'" class="pdf-btn" download><i class="fas fa-download"></i>  </a><span class="highlight">  PDF</span></small>
+                  <p>
+                     '.$dcrypt_specs.'
+                  </p>
+                  <div class="link">
+                     <a href="#" class="rep-link green-b">Accept Order</a>
+                     <a href="#" class="rep-link red-b">Decline Order</a>
+                  </div>
+
+               </div>
+      ';
+      echo $div;
+      }
 
    }
 ?>

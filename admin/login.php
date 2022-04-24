@@ -1,3 +1,10 @@
+<?php
+   require  "../src/functions/functions.php";
+         
+   if(isset($_POST['login'])){
+      login();
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +27,14 @@
 <div class="form-mn-wrapper">
    <div class="cont-mn">
       <div class="opn" >
-         <span>Login to your panel <span>.</span> </span>
+         <span>Login to your panel <span>.</span> </span> <br>
+         <center><small style="color:red; font-size :17px;"><?php show_error();?></small ></center>
       </div>
       <div class="forms">
-         <form action="" method="post">
-            <input type="text" name="" placeholder="Username" id="" required  autocomplete="off">
-            <input type="password" name="" placeholder="Password" id="" required autocomplete="off">
-            <button type="submit">Login</button>
+         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+            <input type="text" name="u_nm" placeholder="Username" id="" required  autocomplete="off">
+            <input type="password" name="u_pwd" placeholder="Password" id="" required autocomplete="off">
+            <button type="submit" name="login">Login</button>
          </form>
       </div>
       
