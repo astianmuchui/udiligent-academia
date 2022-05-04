@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Roboto|Tangerine">
    <link rel="stylesheet" href="../assets/css/cpanel.css">
    <link rel="stylesheet" href="../assets/css/adm_support.css">
+   <link rel="stylesheet" href="../assets/css/cust_msgs_cms.css">
    <script src="../assets/javascript/font_awesome_main.js" crossorigin="anonymous"></script>
    <title>Support</title>
 </head>
@@ -43,68 +44,11 @@
       </div>
 
          <div class="cmplnts_container">
-                  <a href="" class="bar">
-                  <span>    Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-                  <a href="" class="bar">
-                  <span>  Michaela stone</span>
-                  <small>I have not yet received my assignment</small>
-                  </a>
-
+             <?php
+               require "../src/objects/classes.php";
+               $db = new db_acess;
+               $db->support_queries();
+             ?>     
          </div>
 
    </div>

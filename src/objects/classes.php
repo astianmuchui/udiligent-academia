@@ -1,3 +1,4 @@
+
 <?php
    class DB{
       protected $dbname = "rangyrich";
@@ -203,6 +204,7 @@
          $dcrypt_time = base64_decode($this->individual_order['date']);
          $decrypt_url = base64_decode($this->individual_order['url']);
          $dcrypt_specs = base64_decode($this->individual_order['specs']);
+
          $div = ' 
                   <div class="stuff ">
                      <h1>'.$dcrypt_name.'.</h1>
@@ -222,6 +224,135 @@
       ';
       echo $div;
       }
+      public function get_orders(){
+         $this->result = self::exec_query("SELECT * FROM orders ORDER by id desc");
+         $this->orders = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+         foreach($this->orders as $order){
+            //Reverse cipher
+             $rvr_cipher_nm = base64_decode($order['unm']);
+             $rvr_cipher_em = base64_decode($order['email']);
+             $rvr_cipher_tp = base64_decode($order['topic']);
+             $rvr_cipher_date = base64_decode($order['date']);
+             $rvr_cipher_url = base64_decode($order['url']);
+             $rvr_cipher_specs = base64_decode($order['specs']);
+            $enc_id = base64_encode($order['id']);
+             $div = '
+             
+             <div class="ord-card">
+             <p>'.$rvr_cipher_nm.'</p>
+             <span>'.$rvr_cipher_tp.'</span><br>
+             <small>'.substr($rvr_cipher_specs,0,74).'.........</small> <br> 
+             <a href="./view_order.php?id='.$enc_id.'">View</a>
+          </div>
+
+             ';
+             print $div;
+             
+         }
+
+      }
+
+      public function fetch_messages(){
+         $this->result = self::exec_query("SELECT * FROM messages ORDER by id DESC");
+         $this->messages = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+         foreach($this->messages as $msg){
+            //Deciphering ....................
+
+            $dcphr_name = base64_decode($msg['clnm']);
+            $dcphr_msg =
+             base64_decode(
+               substr(
+                  $msg['clmsg']
+                  ,
+                  0
+                  ,
+                  157
+
+                  ));
+                  $nc_id = base64_encode($msg['id']);
+                  $div  = '                  
+                  <a href="./view_message.php?id='.$nc_id.'" class="msg_box">
+               <p class="text-yellow" >'.$dcphr_name.'</p>
+               <small>'.$dcphr_msg.'</small>
+               </a>
+
+                  ';
+                  print($div);
+         }
+      }
+
+      public function support_queries(){
+         $this->result = self::exec_query("SELECT * FROM support ORDER BY id DESC");
+         $this->queries = mysqli_fetch_all($this->result,MYSQLI_ASSOC);
+
+         foreach($this->queries as $querie)
+            {
+               //Decipher info ....
+
+               $dcphr_nm = base64_decode($querie['cmpnm']);
+               $dcphr_msg = base64_decode(
+                  substr(
+                  $querie['cmpmsg'],
+                  0,
+                  157
+               ));
+               $nc_id = base64_encode($querie['id']);
+
+                  $div = '
+                  
+                  <a href="" class="msg_box">
+                  <span class="text-yellow"> '.$dcphr_nm.' </span>
+                  <small>'.$dcphr_msg.'</small>
+                  </a>
+
+                  ';
+               echo $div;
+            }
+      }
+
+      public function view_message(){
+         if(isset($_GET['id'])){
+            $id =base64_decode( $_GET['id']);
+
+            $this->result = self::exec_query("SELECT * FROM messages WHERE id = $id");
+            $this->ses_msg = mysqli_fetch_assoc($this->result);
+            //Needed parameters are date , name , email and message
+            #Decipher.................
+
+
+
+
+            $dc_name = base64_decode($this->ses_msg['clnm']);
+            $dc_time = (
+               substr
+               (
+                  $this->ses_msg['time']
+               ,0,
+               16
+               
+            ));
+
+            $dc_msg = base64_decode($this->ses_msg['clmsg']);
+            $dc_email = base64_decode($this->ses_msg['clmail']);
+
+            $div = '
+            
+            <div class="stuff">
+               <h1>'.$dc_name.'.</h1>
+               <small> '.$dc_time.' </small>
+               <p> '.$dc_msg.' </p>
+                  <a href="mailto: '.$dc_email.' " class="rep-link">Reply Message</a>
+            </div>
+
+
+            ';
+
+            echo $div;
+
+            
+         }
+
+      }
 
    }
-?>
+   ?>

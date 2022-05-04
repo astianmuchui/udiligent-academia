@@ -43,71 +43,12 @@
       </div>
       <div class="msgs-cont">
         
-            <a href="" class="msg_box">
-               <p class="text-yellow" >Jack smith</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-         
-            <a href="" class="msg_box">
-               <p class="text-yellow" >John Doe</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            <a/>
+          <?php
+            require "../src/objects/classes.php";
+            $db = new db_acess;
+            $db->fetch_messages();
 
-            <a href=""  class="msg_box">
-               <p class="text-yellow" >William levy</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-
-            <a href=""  class="msg_box">
-               <p class="text-yellow" >Jane Flair</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-
-            <a href="" class="msg_box">
-               <p class="text-yellow" >Ashley Bell</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-
-            <a href="" class="msg_box">
-               <p class="text-yellow" >Kyle Sullivan</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-            <a href="" class="msg_box">
-               <p class="text-yellow" >Shawn pierce</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-              <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-            <a href=""  class="msg_box">
-               <p class="text-yellow" >Amanda Bennet</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-            <a href=""  class="msg_box">
-               <p class="text-yellow" >Nikita Q</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-              <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
-            <a href=""  class="msg_box">
-               <p class="text-yellow" >Shane west</p>
-               <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa velit eligendi asperiores sapiente cum sequi earum similique, mollitia consequuntur molestiae.</small>
-               <!-- <br> -->
-               <!-- <small class="time">2021-11-20 12:39</small> -->
-            </a>
+          ?>
       </div>
    </section>
 <script src="../assets/javascript/reloader.js"></script>

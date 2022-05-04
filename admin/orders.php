@@ -1,3 +1,7 @@
+<?php   
+   require_once "../src/objects/classes.php";
+   $server = new db_acess;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,50 +50,9 @@
       </div>
      
       <div class="grid-mini">
-         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>
-         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>
-         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>   
-         <div class="ord-card">
-            <p>Amanda reeves</p>
-            <span>Chemistry</span><br>
-            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aspernatur.........</small> <br> 
-            <a href="#" class="">View</a>
-         </div>
+      <?php
+         $server->get_orders();
+      ?>
       </div>
    </div>
    <script src="../assets/javascript/reloader.js"></script>
